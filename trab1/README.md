@@ -26,8 +26,8 @@ Obrigatório:
 
  A saída dos programas deve mostrar:
 
-        Número de iterações efetuadas pelos programas
-        Devera ser mostrado o valor aproximado resultado do processo. Para isso deve ser utilizando a fila 2 da matriz A e comparar com o valor da matriz B na fila 2
+- Número de iterações efetuadas pelos programas.
+- Devera ser mostrado o valor aproximado resultado do processo. Para isso deve ser utilizando a fila 2 da matriz A e comparar com o valor da matriz B na fila 2
 
 Exemplo de saída:
 
@@ -78,19 +78,21 @@ Exemplo de saída:
         Tempo de execução seqüencial e tempo de execução paralelo
         Speedup
 
-Avaliação
+- Avaliação
 
 A avaliação deve considerar:
-
-    Qualidade do relatório e descrição dos resultados com base na execução dos códigos.
-    Saída correta dos códigos bem como a qualidade do mesmo (comentários, identação, menus de utilização, etc).
+ 
+  - Qualidade do relatório e descrição dos resultados com base na execução dos códigos.
+  - Saída correta dos códigos bem como a qualidade do mesmo (comentários, identação, menus de utilização, etc).
 
 Redmine
 
-    Em breve!!!
+Em breve!!!
 
 Prazos
 
+--------------------------------------------
 Relatório e Códigos
 
 06/09/15 - 23:55h (Turmas A, B e PosGrad)
+--------------------------------------------
