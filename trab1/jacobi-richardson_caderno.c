@@ -1,7 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <pthread.h> //nao usa ainda
-#include <time.h>	// nao usa ainda
+#include <math.h>
+#include <pthread.h>
+//#include <time.h>
+
+//estrutura de dados de cada thread
+typedef struct tdata {
+	int tid;
+	double **matriz;
+	double *vetorAux;
+	double *vetorKpp;
+} tdata;
 
 //printa matriz
 void printaMat (double **mat, int ordem) {
@@ -22,16 +31,18 @@ void printaVec (double *vec, int size) {
 	int i;
 	printf ("\n");
 	for (i = 0; i < size; i++) {
-		printf("%.4f  ", vec[i]);
+		printf("x(%d)=%.5f\t", i, vec[i]);
 	}
 	printf ("\n\n");
 	return;
 }
 
 int main (int argc, char *argv[]) {
+	//pthread_t *thread;
+	//tdata *thread_data;
 	int i, j, j_order, j_row_test, j_ite_max, iteracao = 0;
-	double j_error, conta;
-	double **matriz, *vetorAux, *vetorResultado;
+	double j_error, conta, norma1, norma2, erroRel;
+	double **matriz, *vetorAux, *vetorKpp, *vetorK;
 
 	//entrada dos dados
 	scanf("%d", &j_order);
@@ -53,7 +64,8 @@ int main (int argc, char *argv[]) {
 
 	//aloca vetor
 	vetorAux = (double*) malloc (j_order * sizeof(double));
-	vetorResultado = (double*) malloc (j_order * sizeof(double));
+	vetorKpp = (double*) malloc (j_order * sizeof(double));
+	vetorK = (double*) malloc (j_order * sizeof(double));
 	//le dados do vetor
 	for (i = 0; i < j_order; i++) {
 		scanf("%lf", &vetorAux[i]);
@@ -68,26 +80,39 @@ int main (int argc, char *argv[]) {
 		}
 		vetorAux[i] /= matriz[i][i];
 		//copia pro outro vetor
-		vetorResultado[i] = vetorAux[i];
+		vetorKpp[i] = vetorAux[i];
 		matriz[i][i] = 0;
 	}
 
 	//iterações
-	while (iteracao < j_ite_max) {	//TODO: condição de parada é iterações OU erro (por enquanto só faz por iterações)
+	do {
 		//para cada linha da matriz/vetor
 		for (i = 0; i < j_order; i++) {
 			conta = 0;
 			for (j = 0; j < j_order; j++) {
-				conta -= matriz[i][j]*vetorResultado[j];
+				conta -= matriz[i][j]*vetorKpp[j];
 			}
-			//Xi^(k+1) = somatoria ( Bij * Xi^(k) ) + Xi^(0) 
-			vetorResultado[i] = conta + vetorAux[i];
+			//guarda resultados da iteração anterior
+			vetorK[i] = vetorKpp[i];
+			//Xi^(k+1) = somatoria ( Bij*Xi^(k) ) + Xi^(0) 
+			vetorKpp[i] = conta + vetorAux[i];
 		}
+		//calcula erro
+		norma1 = norma2 = 0;
+		for (i = 0; i < j_order; i++) {
+			vetorK[i] = vetorKpp[i] - vetorK[i];
+			norma1 += pow(vetorK[i], 2);
+			norma2 += pow(vetorKpp[i], 2);
+		}
+		norma1 = sqrt(norma1);
+		norma2 = sqrt(norma2);
+		erroRel = norma1/norma2;
 		iteracao++;
-	}
+	} while ((iteracao < j_ite_max) && (erroRel > j_error));	//para de iterar quando atinge a precisão desejada
+																//ou passa do limite de iterações estabelecido
 
 	//printa o vetor do resultado final do sistema linear
-	printaVec(vetorResultado, j_order);
+	printaVec(vetorKpp, j_order);
 
 	//libera matriz e vetor
 	for (i = 0; i < j_order; i++) {
@@ -95,9 +120,7 @@ int main (int argc, char *argv[]) {
 	}
 	free (matriz);
 	free (vetorAux);
-	free (vetorResultado);
-
-	
+	free (vetorKpp);
 
 	return 0;
 }
