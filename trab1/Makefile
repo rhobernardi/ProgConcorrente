@@ -11,7 +11,7 @@ parallel:
 	$(CC) T1P T1P.c $(FLAGS)
 
 clean:
-	@rm -rf *~ *.o trab* test
+	@rm -rf *~ *.o T1P T1S
 
 zip:
 	@rm -rf *~ *.o
