@@ -5,10 +5,10 @@ FLAGS = -lm -lpthread -Werror
 all: iterative parallel
 
 iterative: 
-	$(CC) trab1_i jacobi-richardson_iterative.c $(FLAGS)
+	$(CC) T1S T1S.c -lm
 
 parallel:
-	$(CC) trab1_p jacobi-richardson_pthreads.c $(FLAGS)
+	$(CC) T1P T1P.c $(FLAGS)
 
 clean:
 	@rm -rf *~ *.o trab* test
@@ -17,9 +17,3 @@ zip:
 	@rm -rf *~ *.o
 	@rm -rf *.zip
 	@zip -r concorrentes_trab1.zip main.c ./matriz/ Makefile
-
-runI:
-	./trab1_i < ./matrizes/matriz3.txt
-
-runP:
-	./trab1_p < ./matrizes/matriz500.txt
