@@ -1,0 +1,40 @@
+
+Iterations: 10766
+RowTest: 53 => [32.038466] =? 32.000000
+Time: 73.30656s
+
+Iterations: 10766
+RowTest: 53 => [32.038466] =? 32.000000
+Time: 73.55027s
+
+Iterations: 10766
+RowTest: 53 => [32.038466] =? 32.000000
+Time: 73.00712s
+
+Iterations: 10766
+RowTest: 53 => [32.038466] =? 32.000000
+Time: 73.36577s
+
+Iterations: 10766
+RowTest: 53 => [32.038466] =? 32.000000
+Time: 73.44662s
+
+Iterations: 10766
+RowTest: 53 => [32.038466] =? 32.000000
+Time: 73.56181s
+
+Iterations: 10766
+RowTest: 53 => [32.038466] =? 32.000000
+Time: 73.30001s
+
+Iterations: 10766
+RowTest: 53 => [32.038466] =? 32.000000
+Time: 73.59793s
+
+Iterations: 10766
+RowTest: 53 => [32.038466] =? 32.000000
+Time: 73.38031s
+
+Iterations: 10766
+RowTest: 53 => [32.038466] =? 32.000000
+Time: 73.20959s

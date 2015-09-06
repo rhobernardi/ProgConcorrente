@@ -1,0 +1,40 @@
+
+Iterations: 20000
+RowTest: 5 => [27.333836] =? 27.000000
+Time: 951.82689s
+
+Iterations: 20000
+RowTest: 5 => [27.333836] =? 27.000000
+Time: 955.55533s
+
+Iterations: 20000
+RowTest: 5 => [27.333836] =? 27.000000
+Time: 957.80777s
+
+Iterations: 20000
+RowTest: 5 => [27.333836] =? 27.000000
+Time: 955.65657s
+
+Iterations: 20000
+RowTest: 5 => [27.333836] =? 27.000000
+Time: 953.75183s
+
+Iterations: 20000
+RowTest: 5 => [27.333836] =? 27.000000
+Time: 958.20947s
+
+Iterations: 20000
+RowTest: 5 => [27.333836] =? 27.000000
+Time: 957.03976s
+
+Iterations: 20000
+RowTest: 5 => [27.333836] =? 27.000000
+Time: 953.84237s
+
+Iterations: 20000
+RowTest: 5 => [27.333836] =? 27.000000
+Time: 952.60426s
+
+Iterations: 20000
+RowTest: 5 => [27.333836] =? 27.000000
+Time: 952.44129s

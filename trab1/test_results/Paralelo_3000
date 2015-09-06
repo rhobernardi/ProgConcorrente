@@ -1,0 +1,40 @@
+
+Iterations: 20000
+RowTest: 56 => [7.063840] =? 7.000000
+Time: 186.29410s
+
+Iterations: 20000
+RowTest: 56 => [7.063840] =? 7.000000
+Time: 185.27385s
+
+Iterations: 20000
+RowTest: 56 => [7.063840] =? 7.000000
+Time: 186.46158s
+
+Iterations: 20000
+RowTest: 56 => [7.063840] =? 7.000000
+Time: 186.18888s
+
+Iterations: 20000
+RowTest: 56 => [7.063840] =? 7.000000
+Time: 186.52908s
+
+Iterations: 20000
+RowTest: 56 => [7.063840] =? 7.000000
+Time: 184.89892s
+
+Iterations: 20000
+RowTest: 56 => [7.063840] =? 7.000000
+Time: 185.70643s
+
+Iterations: 20000
+RowTest: 56 => [7.063840] =? 7.000000
+Time: 185.72897s
+
+Iterations: 20000
+RowTest: 56 => [7.063840] =? 7.000000
+Time: 185.64479s
+
+Iterations: 20000
+RowTest: 56 => [7.063840] =? 7.000000
+Time: 185.96252s
