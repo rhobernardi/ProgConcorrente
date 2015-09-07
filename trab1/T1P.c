@@ -1,3 +1,11 @@
+/********************************************************************
+*	Trabalho 1 - Programação Concorrente
+*	Execução Paralela do metodo de Jacobi-Richardson
+*
+*	Rodrigo das Neves Bernardi - 8066395
+*	Thiago Ledur Lima - 8084214
+*********************************************************************/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
