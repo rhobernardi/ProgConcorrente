@@ -6,7 +6,7 @@
 #define FILTERDIM 5   //dimensao do filtro. Nesse caso, 5x5.
 #define FILTERSIZE 25 //valor da divisao para a media. Nesse caso, 25.
 
-#define INPUT "400x855.ppm"
+#define INPUT "325x325.ppm"
 #define OUTPUT "out.ppm"
 #define TIMER "tempo.txt"
 

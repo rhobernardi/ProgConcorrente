@@ -1,1 +1,1 @@
-smoothing time: 0.167348s
+smoothing time: 0.051015s
