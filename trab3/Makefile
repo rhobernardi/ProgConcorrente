@@ -13,7 +13,7 @@ zip: compile clean
 	@zip -r Trab2_G12A.zip *
 
 login:
-	ssh username@halley.lasdpc.icmc.usp.br -p 22200
+	ssh grupo15@halley.lasdpc.icmc.usp.br -p 22200
 
 #sequencial
 run1:

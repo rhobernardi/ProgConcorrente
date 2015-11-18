@@ -2,7 +2,7 @@
 
 Programação Concorrente - SSC0143 - 2 Semestre de 2015
 Prof. Dr. Júlio Cezar Estrella
-Trabalho 2 - Smoothing de imagem utilizando CUDA
+Trabalho 3 - Smoothing de imagem utilizando CUDA
 
 - Alunos:
 	
@@ -28,4 +28,4 @@ Trabalho 2 - Smoothing de imagem utilizando CUDA
 
 -Para executar a versão paralela do programa no cluster Cosmos, utilize o comando make run3:
 	
-		$ make run2
+		$ make run3
