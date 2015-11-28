@@ -27,7 +27,7 @@ typedef unsigned char uchar;
     uchar *b;
 } RGB;*/
 
-struct PPMstructure {
+typedef struct PPMstructure {
     char type[3];
     int width;
     int height;

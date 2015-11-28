@@ -16,6 +16,10 @@ login:
 	# password: asd#12a;
 	ssh grupo12a@halley.lasdpc.icmc.usp.br -p 22200
 
+upload:
+	git commit -m "update"
+	git push
+
 #sequencial
 run1:
 	Trab3CUDA
