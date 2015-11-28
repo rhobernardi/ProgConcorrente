@@ -20,6 +20,9 @@ upload:
 	git commit -m "update"
 	git push
 
+run:
+	nvcc Trab3CUDA.cu -o Trab3CUDA.out
+	
 #sequencial
 run1:
 	Trab3CUDA
