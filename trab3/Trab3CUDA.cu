@@ -91,6 +91,7 @@ void readImage(PPMImage *imgIn, PPMImage *imgOut, char *in){
         // compara tipo para ver se é ppm (imagem colorida)
         if(strcmp(type,"P3\n") == 0)
         {
+            printf("======================TYPE: %s\n", type);
             // pula fim da linha
             while (getc(input) != '\n');
 
