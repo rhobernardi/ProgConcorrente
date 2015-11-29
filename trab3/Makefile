@@ -22,6 +22,8 @@ upload:
 
 run:
 	nvcc Trab3CUDA.cu -o Trab3CUDA.out
+	qsub -l nodes=1,walltime=00:10:00 -I
+	./Trab3CUDA.out
 
 #sequencial
 run1:
