@@ -174,7 +174,7 @@ __global__ void filter(uchar *in, uchar *out, int H, int W) {
         }
     }
     out[idx] = (uchar)(Pvalue / FILTERSIZE);
-    printf("\n======================FILTER FINISHED\n");
+    printf("\nFILTER FINISHED IN : %d %d\n", x, y);
 }
 
 
