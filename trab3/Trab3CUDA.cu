@@ -89,8 +89,8 @@ void readImage(PPMImage *imgIn, PPMImage *imgOut, char *in){
         fscanf(input, "%s", type);
 
         // compara tipo para ver se é ppm (imagem colorida)
-        if(strcmp(type,"P3\n") == 0)
-        {
+        //if(strcmp(type,"P3\n") == 0)
+        //{
             printf("======================TYPE: %s\n", type);
             // pula fim da linha
             while (getc(input) != '\n');
@@ -117,10 +117,10 @@ void readImage(PPMImage *imgIn, PPMImage *imgOut, char *in){
                 // fscanf(input, "%hhu %hhu %hhu", &(imgIn->data->r[i]), &(imgIn->data->g[i]), &(imgIn->data->b[i]));
                 fscanf(input, "%hhu %hhu %hhu", &(imgIn->r[i]), &(imgIn->g[i]), &(imgIn->b[i]));        
             }
-        }
+        //}
 
         // se nao, imagem é pgm (preto e branco)
-        else if(strcmp(type,"P2\n") == 0)
+        /*else*/ if(strcmp(type,"P2\n") == 0)
         {
             // codigo para imagem preto e branco
         }
