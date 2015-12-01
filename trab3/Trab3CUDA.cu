@@ -231,8 +231,10 @@ int main(int argc, char const *argv[]) {
     struct timeval startTimeCudaTotal, endTimeCudaTotal;
     gettimeofday(&startTimeCudaTotal, NULL);
 
-    strcpy(in, "image.ppm");
-    strcpy(out, "out_image.ppm");
+    //strcpy(in, "image.ppm");
+    strcpy(in, "image.pgm");
+    //strcpy(out, "out_image.ppm");
+    strcpy(out, "out_image.pgm");
     strcpy(tempo, "time.txt");
 
     // le a imagem de entrada
