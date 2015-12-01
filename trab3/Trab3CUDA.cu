@@ -90,9 +90,10 @@ void readImage(Image *imgIn, Image *imgOut, char *in) {
     
     else {
         // le tipo
+        rewind(input);
         fscanf(input, "%s", type);
 
-        printf("======== %s\n", type);
+        printf("%s\n", type);
 
         // compara tipo para ver se é pgm (escala de cinza)
         if(type[0] == 'P' && type[1] == '2') {
