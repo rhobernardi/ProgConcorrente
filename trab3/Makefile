@@ -2,6 +2,7 @@ all: clean compile
 
 compile:
 	#gcc Trab2SEQ.c -Wall -o Trab2SEQ
+	nvcc Trab3CUDA.cu -o Trab3CUDA.out
 	mpicc Trab3PAR.c -fopenmp -Wall -o Trab3PAR
 
 clean:
@@ -22,12 +23,12 @@ upload:
 
 run:
 	nvcc Trab3CUDA.cu -o Trab3CUDA.out
-	qsub -l nodes=1,walltime=00:10:00 -I
-	./Trab3CUDA.out
+	#qsub -l nodes=1,walltime=00:10:00 -I
+	./Trab3CUDA.out image.ppm out_image.ppm
 
-#sequencial
+# CUDA version
 run1:
-	Trab3CUDA
+	./Trab3CUDA.out image.ppm out_image.ppm
 
 #MPI+OMP local
 run2:
