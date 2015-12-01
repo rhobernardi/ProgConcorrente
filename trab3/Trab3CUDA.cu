@@ -80,7 +80,7 @@ void freeData(Image *img) {
 void readImage(Image *imgIn, Image *imgOut, char *in) {
     FILE *input;
     int i;
-    char *type;
+    char type[3];
     int maxVal, width, height;
 
     input = fopen(in, "r");
@@ -234,6 +234,8 @@ int main(int argc, char const *argv[]) {
     strcpy(in, argv[0]);
     strcpy(out, argv[1]);
     strcpy(tempo, "time.txt");
+
+    printf("%s", in);
 
     // Le a imagem de entrada
     readImage(&imgIn, &imgOut, in);
