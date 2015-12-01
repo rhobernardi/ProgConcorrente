@@ -62,7 +62,7 @@ void allocData(Image *img, char* type, int width, int height, int maxVal) {
     }
 }
 
-// libera memória usada por uma PPMImage
+// libera memória usada por uma Image
 void freeData(Image *img) {
     
     if (img->type[0] == 'P' && img->type[1] == '2') {
@@ -76,7 +76,7 @@ void freeData(Image *img) {
     }
 }
 
-// cria uma estrutura PPMImage, incluindo a leitura do arquivo e a chamada da função para alocar a imagem na memória
+// cria uma estrutura Image, incluindo a leitura do arquivo e a chamada da função para alocar a imagem na memória
 void readImage(Image *imgIn, Image *imgOut, char *in) {
     FILE *input;
     int i;
@@ -91,6 +91,8 @@ void readImage(Image *imgIn, Image *imgOut, char *in) {
     else {
         // le tipo
         fscanf(input, "%s", type);
+
+        printf("======== %s\n", type);
 
         // compara tipo para ver se é pgm (escala de cinza)
         if(type[0] == 'P' && type[1] == '2') {
