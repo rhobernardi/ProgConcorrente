@@ -80,7 +80,7 @@ void freeData(Image *img) {
 void readImage(Image *imgIn, Image *imgOut, char *in) {
     FILE *input;
     int i;
-    char type[3];
+    char *type;
     int maxVal, width, height;
 
     input = fopen(in, "r");
