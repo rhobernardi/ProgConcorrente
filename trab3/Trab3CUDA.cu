@@ -235,14 +235,12 @@ int main(int argc, char const *argv[]) {
     strcpy(out, "out_image.ppm");
     strcpy(tempo, "time.txt");
 
-    printf("%s", in);
-
-    // Le a imagem de entrada
+    // le a imagem de entrada
     readImage(&imgIn, &imgOut, in);
 
     size = imgIn.width * imgIn.height;
 
-    // Execucao do programa para imagens em escala de cinza (PGM)
+    // execucao do programa para imagens em escala de cinza (PGM)
     if(imgIn.type[0] == 'P' && imgIn.type[1] == '2') {
         // Tempo com a alocacao de memoria
         struct timeval startTimeCudaMem, endTimeCudaMem;
