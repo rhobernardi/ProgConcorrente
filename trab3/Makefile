@@ -1,13 +1,12 @@
 all: clean compile
 
 compile:
-	#gcc Trab2SEQ.c -Wall -o Trab2SEQ
-	nvcc Trab3CUDA.cu -o Trab3CUDA.out
 	mpicc Trab3PAR.c -fopenmp -Wall -o Trab3PAR
+	nvcc Trab3CUDA.cu -o Trab3CUDA.out
 
 clean:
 	@find -name "*~" | xargs rm -rf
-	rm -rf *.o Trab2SEQ Trab2PAR out_image.ppm
+	rm -rf *.o Trab3PAR Trab3CUDA out_image.ppm
 
 zip: compile clean
 	@rm -f Trab3_G12A.zip
@@ -22,13 +21,13 @@ upload:
 	git push
 
 run:
-	nvcc Trab3CUDA.cu -o Trab3CUDA.out
+	nvcc Trab3CUDA.cu -o Trab3CUDA
 	#qsub -l nodes=1,walltime=00:10:00 -I
-	./Trab3CUDA.out image.ppm out_image.ppm
+	./Trab3CUDA image.ppm out_image.ppm
 
 # CUDA version
 run1:
-	./Trab3CUDA.out image.ppm out_image.ppm
+	./Trab3CUDA image.ppm out_image.ppm
 
 #MPI+OMP local
 run2:
