@@ -17,7 +17,8 @@ Trabalho 3 - Smoothing de imagem utilizando CUDA
 		$ make 
 
 - Execução
---------------->>>> OBS: No Makefile, devem ser alterados os caminhos das imagens passadas por argumento. Alterados os caminhos das imagens, basta seguir os proximos passos:	
+
+----------->>>> OBS: No Makefile, devem ser alterados os caminhos das imagens passadas por argumento. Alterados os caminhos das imagens, basta seguir os proximos passos:	
 
 
 -Para executar a versão sequencial do programa, utilize o comando:
