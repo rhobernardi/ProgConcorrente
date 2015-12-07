@@ -17,15 +17,17 @@ Trabalho 3 - Smoothing de imagem utilizando CUDA
 		$ make 
 
 - Execução
-	
--Para executar a versão sequencial do programa, utilize o comando make run1:
-	
-		$ make run1
+--------------->>>> OBS: No Makefile, devem ser alterados os caminhos das imagens passadas por argumento. Alterados os caminhos das imagens, basta seguir os proximos passos:	
 
--Para executar a versão paralela do programa localmente (“1 nó”), utilize o comando make run2:
-	
-		$ make run2	
 
--Para executar a versão paralela do programa no cluster Cosmos, utilize o comando make run3:
+-Para executar a versão sequencial do programa, utilize o comando:
 	
-		$ make run3
+		$ make seq
+
+-Para executar a versão paralela OpenMP+OpenMPI do programa no cluster Halley, utilize o comando:
+	
+		$ make par	
+
+-Para executar a versão paralela em CUDA do programa no cluster Halley, utilize o comando:
+	
+		$ make cud
