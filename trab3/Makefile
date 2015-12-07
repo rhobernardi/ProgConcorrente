@@ -1,40 +1,28 @@
 all: clean compile
 
 compile:
-	mpicc Trab3PAR.c -fopenmp -Wall -o Trab3PAR
-	nvcc Trab3CUDA.cu -o Trab3CUDA.out
+	gcc ./Trab3SEQ.c -Wall -o ./Trab3SEQ
+	mpicc ./Trab3PAR.c -fopenmp -Wall -o ./Trab3PAR
+	nvcc ./Trab3CUD.cu -o ./Trab3CUD
 
 clean:
 	@find -name "*~" | xargs rm -rf
-	rm -rf *.o Trab3PAR Trab3CUDA out_image.ppm
+	rm -rf *.o Trab3SEQ Trab3PAR Trab3CUD out_image.pgm out_image.ppm
 
 zip: compile clean
-	@rm -f Trab3_G12A.zip
-	@zip -r Trab3_G12A.zip *
+	@rm -f Trab2_G12A.zip
+	@zip -r Trab2_G12A.zip *
 
-login:
-	# password: asd#12a;
-	ssh grupo12a@halley.lasdpc.icmc.usp.br -p 22200
-
-upload:
-	git commit -m "update"
-	git push
-
-run:
-	nvcc Trab3CUDA.cu -o Trab3CUDA
-	#qsub -l nodes=1,walltime=00:10:00 -I
-	./Trab3CUDA image.ppm out_image.ppm
-
-# CUDA version
-run1:
-	./Trab3CUDA image.ppm out_image.ppm
-
-#MPI+OMP local
-run2:
-	export GOMP_CPU_AFFINITY="0-3"
-	mpirun -np 4 Trab3PAR
+#sequencial
+seq:
+	./Trab3SEQ ./Imagens/RGB_big_13183x4847.ppm out_image.ppm >> ./Resultados/Sequencial_RGBbig.txt
 
 #MPI+OMP cluster
-run3:
-	export GOMP_CPU_AFFINITY="0-3"
-	mpirun -np 15 --hostfile cluster.txt Trab3PAR
+par:
+	export GOMP_CPU_AFFINITY="0-7"
+	mpirun -np 11 --hostfile cluster.txt ./Trab3PAR ./Imagens/RGB_big_13183x4847.ppm out_image.ppm >> ./Resultados/Paralelo_RGBbig.txt
+
+#CUDA
+cud:
+	./Trab3CUD ./Imagens/RGB_big_13183x4847.ppm out_image.ppm >> ./Resultados/CUDA_RGBbig.txt
+	./Trab3CUD ./Imagens/GS_big_13183x4847.pgm out_image.pgm >> ./Resultados/CUDA_GSbig.txt

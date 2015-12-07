@@ -232,7 +232,6 @@ int main(int argc, char const *argv[]) {
     struct timeval startTimeCudaTotal, endTimeCudaTotal;
     gettimeofday(&startTimeCudaTotal, NULL);
 
-
     //strcpy(in, "image.ppm");
     //strcpy(in, "image.pgm");
     //strcpy(out, "out_image.ppm");
@@ -347,18 +346,12 @@ int main(int argc, char const *argv[]) {
         // Calcula o tempo
         result = endTimeCuda.tv_sec - startTimeCuda.tv_sec + (endTimeCuda.tv_usec - startTimeCuda.tv_usec) / 1000000.0;
     }
-
     
     //double resultMem = endTimeCudaMem.tv_sec - startTimeCudaMem.tv_sec + (endTimeCudaMem.tv_usec - startTimeCudaMem.tv_usec) / 1000000.0;
     double resultTotal = endTimeCudaTotal.tv_sec - startTimeCudaTotal.tv_sec + (endTimeCudaTotal.tv_usec - startTimeCudaTotal.tv_usec) / 1000000.0;
 
     printf("GPU: %lfs\n", result);
     printf("GPU + memoria + in/out - TOTAL : %lfs\n", resultTotal);
-    
-    FILE *t;
-    t = fopen(tempo,"w");
-    fprintf(t,"GPU: %lfs\n", result);
-    fclose(t);
 
     return 0;
 }

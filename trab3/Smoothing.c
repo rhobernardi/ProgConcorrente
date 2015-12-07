@@ -1,7 +1,7 @@
 /**
 *	Programação Concorrente - SSC0143 - 2 Semestre de 2015
 *	Prof. Dr. Júlio Cezar Estrella
-*	Trabalho 3 - Smoothing de imagem utilizando CUDA
+*	Trabalho 2 - Smoothing de imagem utilizando MPI+OMP
 *  
 *	Alunos:
 *		Thiago Ledur Lima		- 8084214
@@ -85,7 +85,6 @@ void readImage(PPMImage *imgIn, PPMImage *imgOut, char *in) {
 			}
 		}
 	}
-	
 	fclose(input);
 }
 

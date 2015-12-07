@@ -1,7 +1,7 @@
 /**
 *	Programação Concorrente - SSC0143 - 2 Semestre de 2015
 *	Prof. Dr. Júlio Cezar Estrella
-*	Trabalho 3 - Smoothing de imagem utilizando MPI+OMP
+*	Trabalho 2 - Smoothing de imagem utilizando MPI+OMP
 *  
 *	Alunos:
 *		Thiago Ledur Lima		- 8084214
@@ -29,8 +29,8 @@ int main (int argc, char **argv) {
 	**************************************** nó principal (master) ****************************************
 	******************************************************************************************************/
 	if (mpirank == 0) {
-		strcpy(in, "image.ppm");
-		strcpy(out, "out_image.ppm");
+		strcpy(in, argv[1]);
+    	strcpy(out, argv[2]);
 
 		// lê imagem
 		readImage(&imgIn, &imgOut, in);
@@ -141,7 +141,7 @@ int main (int argc, char **argv) {
 		}
 
 		omp_set_dynamic(0);	// explicitly disable dynamic teams
-		omp_set_num_threads(4);
+		omp_set_num_threads(8);
 		//aplica filtro
 		if (mpirank == 1) {
 			#pragma omp parallel for default(shared) private(i, j)
